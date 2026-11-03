@@ -167,6 +167,12 @@ img {
   padding: 14px 0 10px;
 }
 
+.headline > .wrap {
+  width: calc(100% - 32px);
+  max-width: var(--vsl-player-w);
+  padding: 0;
+}
+
 .headline h1 {
   color: var(--ink);
   font-family: var(--font-display);
@@ -181,7 +187,8 @@ img {
   color: var(--muted);
   font-size: 12px;
   line-height: 1.4;
-  white-space: nowrap;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 @media (min-width: 768px) {
@@ -198,6 +205,21 @@ img {
 
 .vsl-video {
   padding: 4px 0 10px;
+}
+
+/* Keep the headline and portrait player on the same centered column. */
+.vsl-video__box,
+body.is-stripped .vsl-video__box,
+body.is-revealed .vsl-video__box,
+body.is-revealed.is-stripped .vsl-video__box {
+  --stage-w: var(--vsl-player-w);
+  max-width: var(--vsl-player-w);
+  aspect-ratio: 9 / 16;
+}
+
+body.is-stripped .vsl-video__gutter {
+  padding-right: 16px;
+  padding-left: 16px;
 }
 
 /* ---- Comments (Facebook look) ------------------------------------------- */
